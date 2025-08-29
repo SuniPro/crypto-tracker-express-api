@@ -1,0 +1,36 @@
+{
+  "name": "crypto-tracker",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "tsc",
+    "start": "tsc && node dist/app.js",
+    "dev": "ts-node-dev --respawn src/app.ts"
+  },
+  "dependencies": {
+    "@api/tron": "file:.api/apis/tron",
+    "alchemy-sdk": "^3.6.3",
+    "bignumber.js": "^9.3.1",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^17.2.1",
+    "express": "5.0.0",
+    "http-errors": "~1.6.3",
+    "luxon": "^3.7.1",
+    "morgan": "~1.9.1",
+    "prettier": "^3.4.2",
+    "pug": "3.0.3",
+    "tronweb": "^6.0.4",
+    "winston": "^3.17.0"
+  },
+  "devDependencies": {
+    "@types/bignumber.js": "^4.0.3",
+    "@types/cookie-parser": "^1.4.9",
+    "@types/express": "^5.0.3",
+    "@types/luxon": "^3.7.1",
+    "@types/morgan": "^1.9.10",
+    "@types/node": "^24.3.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
+  }
+}
