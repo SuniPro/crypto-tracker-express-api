@@ -29,7 +29,7 @@ app.use((req: Request, res: Response, next: NextFunction) => {
 });
 
 // === 모든 에러 처리 ===
-app.use((err: HttpError, req: Request, res: Response, next: NextFunction) => {
+app.use((err: HttpError, req: Request, res: Response) => {
   // API 서버이므로 JSON 형태로 에러 응답
   res.status(err.status || 500);
   res.json({
