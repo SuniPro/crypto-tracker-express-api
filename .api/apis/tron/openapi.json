@@ -12,9 +12,7 @@
   "components": {
     "securitySchemes": {}
   },
-  "security": [
-    {}
-  ],
+  "security": [{}],
   "paths": {
     "/v1/accounts/{address}": {
       "get": {
