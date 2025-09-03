@@ -7,7 +7,7 @@ WORKDIR /app
 COPY package.json pnpm-lock.yaml ./
 
 # 🔥 2. file: 경로로 참조되는 tron 디렉토리도 미리 복사
-COPY .api/apis/tron ./api/apis/tron
+COPY .api/apis/tron ./.api/apis/tron
 
 # 3. 의존성 설치
 RUN npm install -g pnpm && pnpm install --frozen-lockfile
