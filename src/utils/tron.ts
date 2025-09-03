@@ -56,11 +56,9 @@ export async function TronFindLatestTransferToAddress(
     return undefined;
   }
 
-  recentTransfer.forEach((tx) => console.log(tx));
-
   const tx = recentTransfer
     .filter((tx) => tx.block_timestamp >= requestedAt)
-    .find((tx) => tx.from.toLowerCase() === fromAddress.toLowerCase());
+    .find((tx) => tx.from === fromAddress);
 
   logger.info("[TRANSFER INFO] Raw :" + tx);
 
