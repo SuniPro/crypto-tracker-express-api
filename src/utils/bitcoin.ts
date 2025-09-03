@@ -150,12 +150,12 @@ export async function BtcTransfer(
       const outAddrs = (tx.outputs ?? []).flatMap((o) => o.addresses ?? []);
 
       const fromAddress = inbound
-        ? (inAddrs.find((a) => a !== address) ?? "multiple")
+        ? inAddrs.find((a) => a !== address) ?? "multiple"
         : address;
 
       const toAddress = inbound
         ? address
-        : (outAddrs.find((a) => a !== address) ?? "multiple");
+        : outAddrs.find((a) => a !== address) ?? "multiple";
 
       const iso = tx.confirmed ?? tx.received ?? new Date(0).toISOString();
 

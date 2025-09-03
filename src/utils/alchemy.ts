@@ -174,7 +174,9 @@ export async function EthTransfer(
   for (const tx of [...outRes.transfers, ...inRes.transfers]) {
     const key =
       tx.uniqueId ??
-      `${tx.hash ?? ""}:${tx.category ?? ""}:${tx.rawContract?.address ?? ""}:${tx.blockNum ?? ""}`;
+      `${tx.hash ?? ""}:${tx.category ?? ""}:${tx.rawContract?.address ?? ""}:${
+        tx.blockNum ?? ""
+      }`;
     if (!seen.has(key)) seen.set(key, tx);
   }
 
@@ -204,11 +206,11 @@ export async function EthTransfer(
     const decimals = isEth
       ? 18
       : tx.rawContract?.decimal != null
-        ? // 일부 응답에 0x형식으로 올 수 있어 대비
-          typeof tx.rawContract.decimal === "string"
-          ? parseInt(tx.rawContract.decimal as unknown as string, 16)
-          : Number(tx.rawContract.decimal)
-        : null;
+      ? // 일부 응답에 0x형식으로 올 수 있어 대비
+        typeof tx.rawContract.decimal === "string"
+        ? parseInt(tx.rawContract.decimal as unknown as string, 16)
+        : Number(tx.rawContract.decimal)
+      : null;
 
     // 금액 계산: 가능한 경우 rawContract.value(HEX)를 사용해 정확히 계산
     let cryptoAmount: string | null = null;
