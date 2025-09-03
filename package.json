@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "tsc",
-    "start": "tsc && node dist/app.js",
+    "start": "node dist/app.js",
     "dev": "ts-node-dev --respawn src/app.ts"
   },
   "dependencies": {

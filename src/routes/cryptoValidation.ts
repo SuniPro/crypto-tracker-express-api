@@ -65,8 +65,12 @@ router.get("/get/transfer/tron", async function (req, res, next) {
   const requestedAtParse = parseInt(requestedAt, 10);
 
   logger.info(
-    "FromAddress : " + fromAddress + " to Address : " + toAddress,
-    "RequestedAt" + requestedAt,
+    "FromAddress : " +
+      fromAddress +
+      " to Address : " +
+      toAddress +
+      "RequestedAt" +
+      requestedAt,
   );
 
   try {
